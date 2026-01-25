@@ -2,20 +2,20 @@ package com.kaio.CadastroDeNinjas;
 
 import jakarta.persistence.*;
 
+@Entity
+@Table(name = "tb_cadastro")
 public class NinjaModel {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
     private String nome;
     private String email;
     private int age;
 
-    @Entity
-    @Table(name = "tb_cadastro")
     public NinjaModel() {
     }
 
     public NinjaModel(String nome, String email, int age) {
-        @Id
-        @GeneratedValue(strategy = GenerationType.IDENTITY)
-        Long id;
         this.nome = nome;
         this.email = email;
         this.age = age;
